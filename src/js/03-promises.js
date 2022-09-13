@@ -29,7 +29,7 @@ function onFormSubmit(evt) {
   let firstDelay = Number(refs.delayField.value);
   let stepDelay = Number(refs.stepField.value);
   let amountValue = Number(refs.amountField.value);
-
+  
   for (let i = 1; i <= amountValue; i += 1) {
     createPromise(i, firstDelay)
     .then(({ position, delay }) => {
@@ -41,6 +41,8 @@ function onFormSubmit(evt) {
 
     firstDelay += stepDelay;
   };
+
+  evt.currentTarget.reset();
 };
 
 
